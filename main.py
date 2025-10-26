@@ -8,18 +8,28 @@ class Dog(object):
     def speak(self):
         print("Hi I am", self.name, "and I am", self.age, "years old")
 
-    def change_age(self, age):
-        self.age = age
-
-    def add_weight(self, weight):
-        self.weight = weight
+    def talk(self):
+        print("Bark!")
 
 
-tom = Dog('Tom',30)
-fred = Dog('Fred',10)
-tom.change_age(2)
-tom.add_weight(15)
+# class Cat(object):
+#    def __init__(self, name, age, color):
+#        self.name = name
+#        self.age = age
+#        self.color = color
+
+#    def speak(self):
+#        print("Hi I am", self.name, "and I am", self.age, "years old")
+
+class Cat(Dog):
+    def __init__(self, name, age, color):
+        super().__init__(name, age)
+        self.color = color
+
+    def talk(self):
+        print("Meow!")
+
+
+tom = Cat('Tom',5, 'blue')
 tom.speak()
-fred.speak()
-
-print(tom.weight)
+tom.talk()
