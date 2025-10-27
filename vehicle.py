@@ -32,3 +32,21 @@ class Truck(Vehicle):
 
     def beep(self):
         print("Honk honk")
+
+
+my_car = Car(price=20000, gas=50, color="red", speed=150)
+
+print(my_car.color)   # red
+print(my_car.gasLeft())  # 50
+my_car.beep()        # Beep beep
+my_car.fillUpTank()
+print(my_car.gasLeft())  # 100
+
+
+my_truck = Truck(price=35000, gas=30, color="blue", tires=6)
+
+print(my_truck.color)    # blue
+print(my_truck.tires)    # 6
+my_truck.beep()          # Honk honk
+my_truck.emptyTank()
+print(my_truck.gasLeft()) # 0
