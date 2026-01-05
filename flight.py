@@ -19,7 +19,7 @@ class FlightBookingSystem:
 
     def book_seat(self, code):
         if code in self.flights and self.flights[code].seats > 0:
-            self.flights[code] -= 1
+            self.flights[code].seats -= 1
             print("✅ Seat booked!")
             return self.flights[code].price
         else:
@@ -63,3 +63,12 @@ while True:
         if price:
             confirm = input(f"Pay ${price}? (y/n): ")
             if confirm.lower() == "y":
+                system.pay(price)
+                system.generate_ticket(code,price)
+            else:
+                print("❌ Payment cancelled!")
+    elif ch == "4":
+        print("👋 Goodbye!")
+        break
+    else:
+        print("Invalid option!")
